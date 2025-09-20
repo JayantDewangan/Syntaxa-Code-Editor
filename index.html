@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntaxa - Your personal Code Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+        <header class="navigation-bar">
+            <div class="container">
+                <div class="brand">
+                    <img id="logoImg" src="./assets/logo_dark.png" alt="logo">
+                </div>
+                <div class="row">
+                    <button class="btn secondary" id="saveBtn" title="Save work locally"><span>Save</span></button>
+                    <button class="btn secondary" id="loadBtn" title="load work file"><span>Load</span></button>
+                    <input id="openFile" type="file" accept="application/json" hidden>
+                    <div class="light-dark" id="themeToggle">
+                        <img class="toggleImg" src="./assets/light-mode.png" alt="Toggle theme">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <aside class="card panel stack" id="aside1">
+                <h2>Task / Assignment</h2>
+                <textarea name="" class="text" id="assignment" placeholder="Write the task description here..."></textarea>
+                <div class="stack"><br>
+                    <label for="testArea">Validation tests (JavaScript only - optional)</label>
+                    <textarea name="" class="text" id="testArea" placeholder="Write simple tests to append after the code to check the solution."></textarea>
+                </div>
+                <div class="muted"> <br><br><span>
+                    Tip :<br></span><br> <span class="kbd">Ctrl</span> + <span class="kbd">S</span> to save,<br><br> <span class="kbd">Ctrl</span> + <span class="kbd">Enter</span> to run.
+                </div>
+            </aside>
+
+            <section class="stack" id="web-only">
+                <div class="stack panel card" id="webEditors">
+                    <div class="row">
+                        <h2 id="html-css-js">HTML / CSS / JS</h2>
+                        <div class="row">
+                            <button class="btn ok" id="runWeb">Run</button>
+                            <button class="btn secondary" id="openPreview">Open preview in a new Window.</button>
+                        </div>
+                    </div>
+
+                    <div class="tabs" id="webTabs" role="tablist" aria-label="web editors">
+                        <button class="tab active" role="tab" aria-selected="true" tabindex="0" data-pane="html"">HTML</button>
+                        <button class="tab" role="tab" aria-selected="false" tabindex="-1" data-pane="css"">CSS</button>
+                        <button class="tab" role="tab" aria-selected="false" tabindex="-1" data-pane="js"">JavaScript</button>
+                    </div>
+
+                    <div class="editor-wrap" data-pane="html">
+                        <div id="ed_html" class="editor"></div>
+                    </div>
+
+                    <div class="editor-wrap" data-pane="css" hidden>
+                        <div class="editor" id="ed_css"></div>
+                    </div>
+
+                    <div class="editor-wrap" data-pane="js" hidden>
+                        <div id="ed_js" class="editor"></div>
+                    </div>
+
+                    <div class="stack">
+                        <h3 id="prev">Preview</h3>
+                        <iframe id="preview" class="preview" sandbox="allow-scripts allow-same-origin allow-modals allow-forms"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="stack panel card" id="aside2">
+                <h2>Output</h2>
+                <div class="out" id="output" aria-live="polite"></div>
+                <div class="row">
+                    <button class="btn warn" id="runTests">Run with tests</button>
+                    <button class="btn err" id="clearOut">Clear log</button>
+                </div><br><br>
+                <h3>Notes : </h3>
+                <ul class="muted">
+                    <li class="label">Everything runs inside the browser in a sandbox.</li>
+                    <li class="label">You can save the work as a JSON file and restore it.</li>
+                </ul>
+            </aside>
+        </main> <br><br>
+    <footer class="footer-section">
+        <div class="footer">&copy; 2025 Syntaxa - All rights reserved.</div>
+        <div class="promotion">
+            <a href="https://www.linkedin.com/in/jayant-dewangan/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+
+            <a href="https://github.com/JayantDewangan" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i></a>
+
+            <a href="https://www.instagram.com/jayant.031/" target="_blank"><i class="fa fa-instagram"></i></a>
+
+            <a href="https://mail.google.com/mail/?view=cm&to=jayant2003dewangan@gmail.com" target="_blank">
+            <i class="fa fa-envelope"></i></a>
+        </div>
+    </footer>
+
+    <!-- Load Ace Editor with fallback -->
+      <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.43.2/ace.js"
+    integrity="sha512-ZIa+FlPaGDSM+lTl9JaxnQvcfma7ETsOHd9Thbhp5u4RX1uYiDNW7XvUrXv4dJSPetXbiTzWilHEkSg4YpmltQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    onerror="(function(){var s=document.createElement('script'); s.src='https://cdn.jsdelivr.net/npm/ace-builds@1.43.2/src-min/ace.js'; document.head.appendChild(s);}())">
+  </script>
+    <script src="script.js"></script>
+</body>
+</html>

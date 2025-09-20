@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+  color: #e9ecf1;
+  background-color: #0f1221;
+  overflow-x: hidden;
+}
+
+body.light-theme {
+  color: #1e293b;
+  background-color: #f1f5f9;
+}
+
+body.light-theme header {
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+body.light-theme .card {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.01));
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+body.light-theme .btn.secondary {
+  color: #1e293b;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme .select, 
+body.light-theme select, 
+body.light-theme .text {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #1e293b;
+}
+
+body.light-theme .tab {
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background: rgba(0, 0, 0, 0.03);
+  color: #1e293b;
+}
+
+body.light-theme .editor-wrap {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+body.light-theme .out {
+  background-color: #f8fafc;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+body.light-theme .muted,
+body.light-theme .label {
+  color: #64748b;
+}
+
+body.light-theme .footer{
+    color: darkblue;
+}
+body.light-theme .footer-section {
+  background-color: #e2e8f0;
+}
+
+header{
+    width: 100vw;
+    background-color:  #061523;
+    border-bottom: 1px solid rgba(255,255,255, 0.07);
+}
+
+.container{
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand img{
+    height: 60px;
+    cursor: pointer;
+}
+
+.light-dark img{
+    height: 40px;
+    cursor: pointer;
+}
+
+main{
+    max-width: 1516px;
+    margin-inline: auto;
+    padding: 18px;
+    display: grid;
+    grid-template-columns: 280px 1fr 360px;
+    gap: 14px;
+}
+
+@media (max-width: 1100px) {
+    main{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px){
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .brand img{
+        height: 35px;
+    }
+    .light-dark img{
+        height: 33px;
+    }
+}
+
+.card{
+    background: linear-gradient(180deg, rgba(255,255,255, 0.05), rgba(255,255,255, 0.03));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.panel{
+    padding: 16px;
+}
+
+h2,h3{
+    margin: 0 0 12px;
+}
+
+.muted{
+    color: #8b93a7;
+    font-size: 13px;
+}
+
+.stack{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container .row{
+    gap: 13px;
+}
+
+.btn{
+    appearance: none;
+    border: none;
+    background: linear-gradient(180deg,#60a5fa, #7dd3fc);
+    color: #08111f;
+    font-weight: 700;
+    padding: 10px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(96,165,250,0.35);
+    transition: 0.1s ease-in-out;
+}
+.btn:hover{
+    transform: scale(1.03);
+}
+
+.btn.secondary{
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #e9ecf1;
+    box-shadow: none;
+}
+
+.btn.warn{
+    background: linear-gradient(180deg,#f59e0b, #eab308);
+}
+
+.btn.ok{
+    background: linear-gradient(180deg,#34d399,#22c55e);
+}
+
+.btn.err{
+    background: linear-gradient(180deg,#fb7185,#ef4444);
+}
+
+.select, select, .text{
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 10px 12px;
+    border-radius: 12px;
+    color: #e9ecf1;
+}
+
+textarea.text{
+    width: 100%;
+    min-height: 120px;
+    overflow: hidden;
+    resize: none;
+}
+
+.tabs{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tab{
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.03);
+    cursor: pointer;
+    font-weight: 700;
+    color: #fff;
+    transition: 0.1s ease-in-out;
+}
+.tab:hover{
+    transform: scale(1.03);
+}
+
+.tab.active{
+    background: linear-gradient(180deg, rgba(125,211,252,0.18), rgba(96,165,250,0.18));
+    color: #00FF00 !important;
+}
+
+.editor-wrap{
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.12);
+    overflow: hidden;
+    border-radius: 14px;
+    min-height: 280px;
+    background-color: #0b1020;
+}
+
+.editor{
+    width: 100%;
+    height: 400px;
+}
+
+iframe.preview{
+    width: 100%;
+    height: 380px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    background-color: #fff;
+}
+
+.out{
+    background-color: #0a0e1a;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 10px;
+    min-height: 160px;
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+.kbd{
+    font-family: ui-monospace;
+    background-color: #5112fe;
+    border: 3px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 3px 7px;
+    color: #fff;
+}
+
+.label{
+    font-size: 15px;
+    color: #8b93a7;
+}
+
+ul{
+    padding-left: 14px;
+}
+
+/* FOOTER SECTION :  */
+.footer-section{
+    position: relative;
+    background-color: #011324;
+    color: grey;
+    padding-left: 50px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    width: 100vw;
+    margin-left: calc((100vw - 100%) / -2);
+    overflow: hidden;
+    font-family: Outfit;
+}
+
+.footer-section .footer{
+    cursor: pointer;
+    color: greenyellow;
+}
+
+.footer-section .footer:hover{
+    color: rgb(119, 183, 21);
+}
+
+.footer-section .promotion{
+    display: flex;
+    gap: 13px;
+}
+
+.footer-section .promotion a{
+    font-size: 36px; 
+    color:rgb(156, 155, 155)
+}
+
+.footer-section .promotion a:hover{
+    color:rgb(219, 124, 124)
+}
+
+#aside1{
+    font-family: Outfit;
+}
+
+#aside2{
+    font-family: Outfit;
+}
+
+#html-css-js{
+    font-family: Outfit;
+}
+
+#prev{
+    font-family: Outfit;
+}
